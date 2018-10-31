@@ -1,1 +1,4 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/ for how to compile this example.
+## Spatial Analyis and Mapping in R
+### A SOLAMAC 2018 Workshop in Lima, Peru
+
+This is a book of resources, references, and examples as part of the Spatial Analysis and Mapping in R workshop as part of SOLAMAC 2018 in Lima, Peru. 

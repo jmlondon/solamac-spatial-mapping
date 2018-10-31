@@ -1,0 +1,147 @@
+# Exercise #1: Loading Spatial Data
+
+## Load Spatial Data Into R
+
+The `sf` package has wide-ranging support for importing vairous spatial
+data/file formats. You can even import data directly from a spatially
+enabled database (e.g. PostgreSQL/PostGIS). One of the more common spatial
+file formats you may encounter is the ESRI Shapefile format.
+
+Here, we will work with an example from a research effort surveying for
+_Franciscana_. Prior to the survey effort, there was a region identified as
+a hiatus, or gap, where there were no historical sightings of _Franciscana_. This
+region was defined and is provided as a Shapefile.
+
+```{r load-franciscana}
+library(tidyverse)
+library(sf)
+library(lwgeom)
+
+hiatus_path <- file.path("..","data","Fraciscana_Example","Hiatus.shp")
+
+hiatus <- sf::st_read(hiatus_path)
+```
+
+This demonstrates a common issue with Shapefiles. Sometimes they can be improperly
+formed or corrupted. The `lwgeom` package has a function `st_make_valid()` which
+can fix most of these issues. There is one additional step required
+(`sf::st_collection_extrac()`) which simplifies the data object from a 
+"GEOMETRYCOLLECTION" to a single "POLYGON". Don't get too hung up on these steps
+to 'fix' the Shapefile data. Unfortunately, it is just one of those things that
+you might have to wrestle with when importing data.
+
+Note that we are using the _pipe_ (`%>%`) function in the code below. This is a
+key component of the _tidyverse_ and may be new to users more familiar with
+standard R code. 
+
+```{r, make-valid}
+library(lwgeom)
+hiatus <- hiatus %>% lwgeom::st_make_valid() %>% 
+  sf::st_collection_extract()
+# base R version
+# hiatus <- lwgeom::st_make_valid(hiatus)
+```
+
+Now, let's just do a quick plot of hiatus so we can verify it looks valid
+
+```{r, check-plot}
+hiatus %>% plot()
+```
+
+While this demonstrates that we have successfully imported the spatial data into
+R, it is not a very satisfying map. We will use the `ggplot2` package as the
+basis for all of our mapping. If you are not already familiar with `ggplot2`, it
+is a widely used framework for creating all types of plots and graphics from
+within R. `ggplot2` has special extensions and capabilities with respect to 
+simple features (`sf`) data that simplifies creation of publication quality
+maps.
+
+First, lets repeat our previous plot but this time with `ggplot2`
+
+```{r quick_ggplot}
+# ggplot2 is already loaded as part of the tidyverse
+ggplot() + geom_sf(data = hiatus)
+```
+
+This is a nicer looking plot and, note, `ggplot2` has kindly added graticule
+ticks for the longitude and latitude values. It would be nice, however, if we
+had some land and ocean features so we can better appreciate this hiatus region.
+
+For this, we can use the `ggspatial` package to import map tiles hosted exernally
+via the internet. In this first example, we will pull map tiles from the Open
+Street Map service.
+
+```{r hiatus-osm}
+library(ggspatial)
+
+ggplot() +
+  annotation_map_tile(type = "osm") +
+  layer_spatial(hiatus)
+```
+
+This is an improvement, but it might be better if we added some transparency
+to the hiatus polygon so we can see the land features underneath. We can also
+change the color and weight of the line so it stands out more.
+
+```{r hiatus-osm-2}
+ggplot() +
+  annotation_map_tile(type = "osm") +
+  layer_spatial(hiatus, col = "dark red", alpha = 0.4, size = 2)
+```
+
+Now we have a slightly better sense of where we are in relation to the nearby
+land. But, it might be useful to zoom out a bit more so we can get a better
+sense of the areas location and nearby geograph. Note the arguments to 
+_expand_ within `scale_x_continuous` and `scale_y_continuous` are in units
+of degrees longitude and latitude.
+
+While we are at it, we can also add a scale bar in the bottomr right.
+
+```{r hiatus-osm-3}
+ggplot() +
+  annotation_map_tile(type = "osm") +
+  layer_spatial(hiatus, col = "dark red", alpha = 0.4, size = 1) +
+  scale_y_continuous(expand = c(1.5,1.5)) +
+  scale_x_continuous(expand = c(2,2)) +
+  annotation_scale(location = "br", width_hint = 0.5, style = "ticks")
+```
+
+The Open Street Map project is not really designed for environmental or marine
+centric maps. A better option might be the ESRI World Ocean Basemap which provides
+detailed bathymetry and topography for the entire globe.
+
+We need to specify the URL location for the tile service:
+
+```{r esri-ocean-tiles}
+esri_ocean <- paste0('https://services.arcgisonline.com/arcgis/rest/services/',
+                     'Ocean/World_Ocean_Base/MapServer/tile/${z}/${y}/${x}.jpeg')
+```
+
+And, then we can replace the `annotation_map_tile()` in the previous code
+
+```{r hiatus-esri-ocean}
+ggplot() +
+  annotation_map_tile(type = esri_ocean, zoomin = 1, progress = "none") +
+  layer_spatial(hiatus, col = "dark red", alpha = 0.4, size = 1) +
+  scale_y_continuous(expand = c(1.5,1.5)) +
+  scale_x_continuous(expand = c(2,2)) +
+  annotation_scale(location = "br", width_hint = 0.5, style = "ticks")
+```
+
+Now that we no longer have place names, it is important to add a title and
+subtitle to the map so we can inform the user about what this is and where
+it is in the world.
+
+```{r hiatus-esri-ocean-2}
+ggplot() +
+  annotation_map_tile(type = esri_ocean, zoomin = 1, progress = "none") +
+  layer_spatial(hiatus, col = "dark red", alpha = 0.4, size = 1) +
+  scale_y_continuous(expand = c(1.5,1.5)) +
+  scale_x_continuous(expand = c(2,2)) +
+  annotation_scale(location = "tl", 
+                   width_hint = 0.5, 
+                   style = "ticks") +
+  ggtitle("Franciscana Hiatus Region",
+          subtitle = "Area of limited Franciscana sightings off NE Brazil")
+```
+
