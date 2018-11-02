@@ -137,7 +137,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#making-maps-with-ggplot2-and-ggspatial"><i class="fa fa-check"></i><b>2.2</b> Making Maps with <code>ggplot2</code> and <code>ggspatial</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html"><i class="fa fa-check"></i><b>3</b> Exercise #1: Loading Spatial Data</a><ul>
-<li class="chapter" data-level="3.1" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#load-spatial-data-into-r"><i class="fa fa-check"></i><b>3.1</b> Load Spatial Data Into R</a></li>
+<li class="chapter" data-level="3.1" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#load-shapefiles-into-r"><i class="fa fa-check"></i><b>3.1</b> Load Shapefiles Into R</a></li>
+<li class="chapter" data-level="3.2" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#first-map-with-ggplot"><i class="fa fa-check"></i><b>3.2</b> First Map with ggplot</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#cartolight"><i class="fa fa-check"></i><b>3.2.1</b> cartolight</a></li>
+<li class="chapter" data-level="3.2.2" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#microsoft-bing-aerial-imagery"><i class="fa fa-check"></i><b>3.2.2</b> Microsoft Bing Aerial Imagery</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -161,8 +165,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="exercise-1-loading-spatial-data" class="section level1">
 <h1><span class="header-section-number">Section 3</span> Exercise #1: Loading Spatial Data</h1>
-<div id="load-spatial-data-into-r" class="section level2">
-<h2><span class="header-section-number">3.1</span> Load Spatial Data Into R</h2>
+<div id="load-shapefiles-into-r" class="section level2">
+<h2><span class="header-section-number">3.1</span> Load Shapefiles Into R</h2>
 <p>The <code>sf</code> package has wide-ranging support for importing vairous spatial
 data/file formats. You can even import data directly from a spatially
 enabled database (e.g. PostgreSQL/PostGIS). One of the more common spatial
@@ -172,12 +176,12 @@ file formats you may encounter is the ESRI Shapefile format.</p>
 a hiatus, or gap, where there were no historical sightings of <em>Franciscana</em>. This
 region was defined and is provided as a Shapefile.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
-<pre><code>## ── Attaching packages ─────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ── Attaching packages ────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
 <pre><code>## ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
 ## ✔ tibble  1.4.2     ✔ dplyr   0.7.7
 ## ✔ tidyr   0.8.1     ✔ stringr 1.3.1
 ## ✔ readr   1.1.1     ✔ forcats 0.3.0</code></pre>
-<pre><code>## ── Conflicts ────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ───────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">library</span>(sf)</a></code></pre></div>
@@ -216,6 +220,9 @@ standard R code.</p>
 <p>Now, let’s just do a quick plot of hiatus so we can verify it looks valid</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">hiatus <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">plot</span>()</a></code></pre></div>
 <p><img src="solamac-spatial-mapping_files/figure-html/check-plot-1.png" width="672" /></p>
+</div>
+<div id="first-map-with-ggplot" class="section level2">
+<h2><span class="header-section-number">3.2</span> First Map with ggplot</h2>
 <p>While this demonstrates that we have successfully imported the spatial data into
 R, it is not a very satisfying map. We will use the <code>ggplot2</code> package as the
 basis for all of our mapping. If you are not already familiar with <code>ggplot2</code>, it
@@ -290,7 +297,37 @@ it is in the world.</p>
 <a class="sourceLine" id="cb24-9" data-line-number="9"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Franciscana Hiatus Region&quot;</span>,</a>
 <a class="sourceLine" id="cb24-10" data-line-number="10">          <span class="dt">subtitle =</span> <span class="st">&quot;Area of limited Franciscana sightings off NE Brazil&quot;</span>)</a></code></pre></div>
 <p><img src="solamac-spatial-mapping_files/figure-html/hiatus-esri-ocean-2-1.png" width="672" /></p>
+<p>There are variety of other style options available for tile maps that you
+can explore. Here are some additional tiles that you might prefer</p>
+<div id="cartolight" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> cartolight</h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> <span class="st">&quot;cartolight&quot;</span>, <span class="dt">zoomin =</span> <span class="dv">1</span>, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="st">  </span><span class="kw">layer_spatial</span>(hiatus, <span class="dt">col =</span> <span class="st">&quot;dark red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="fl">1.5</span>,<span class="fl">1.5</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-6" data-line-number="6"><span class="st">  </span><span class="kw">annotation_scale</span>(<span class="dt">location =</span> <span class="st">&quot;tl&quot;</span>, </a>
+<a class="sourceLine" id="cb25-7" data-line-number="7">                   <span class="dt">width_hint =</span> <span class="fl">0.5</span>, </a>
+<a class="sourceLine" id="cb25-8" data-line-number="8">                   <span class="dt">style =</span> <span class="st">&quot;ticks&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-9" data-line-number="9"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Franciscana Hiatus Region&quot;</span>,</a>
+<a class="sourceLine" id="cb25-10" data-line-number="10">          <span class="dt">subtitle =</span> <span class="st">&quot;Area of limited Franciscana sightings off NE Brazil&quot;</span>)</a></code></pre></div>
+<p><img src="solamac-spatial-mapping_files/figure-html/hiatus-cartolight-1.png" width="672" /></p>
+</div>
+<div id="microsoft-bing-aerial-imagery" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Microsoft Bing Aerial Imagery</h3>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> <span class="st">&quot;http://ecn.t3.tiles.virtualearth.net/tiles/a${q}.jpeg?g=1&quot;</span>, <span class="dt">zoomin =</span> <span class="dv">1</span>, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb26-3" data-line-number="3"><span class="st">  </span><span class="kw">layer_spatial</span>(hiatus, <span class="dt">col =</span> <span class="st">&quot;dark red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb26-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="fl">1.5</span>,<span class="fl">1.5</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb26-5" data-line-number="5"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb26-6" data-line-number="6"><span class="st">  </span><span class="kw">annotation_scale</span>(<span class="dt">location =</span> <span class="st">&quot;tl&quot;</span>, </a>
+<a class="sourceLine" id="cb26-7" data-line-number="7">                   <span class="dt">width_hint =</span> <span class="fl">0.5</span>, </a>
+<a class="sourceLine" id="cb26-8" data-line-number="8">                   <span class="dt">style =</span> <span class="st">&quot;ticks&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb26-9" data-line-number="9"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Franciscana Hiatus Region&quot;</span>,</a>
+<a class="sourceLine" id="cb26-10" data-line-number="10">          <span class="dt">subtitle =</span> <span class="st">&quot;Area of limited Franciscana sightings off NE Brazil&quot;</span>)</a></code></pre></div>
+<p><img src="solamac-spatial-mapping_files/figure-html/hiatus-bing-aerial-1.png" width="672" /></p>
 
+</div>
 </div>
 </div>
             </section>
