@@ -25,7 +25,7 @@
 <meta name="author" content="Josh M. London">
 
 
-<meta name="date" content="2018-10-31">
+<meta name="date" content="2018-11-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -68,11 +68,24 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#spatial-analysis-and-data-types"><i class="fa fa-check"></i><b>2.1</b> Spatial Analysis and Data Types</a></li>
-<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#making-maps-with-ggplot2-and-ggspatial"><i class="fa fa-check"></i><b>2.2</b> Making Maps with <code>ggplot2</code> and <code>ggspatial</code></a></li>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#about-the-instructors"><i class="fa fa-check"></i><b>2.1</b> About the Instructors</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#josh-m-london-seattle-washington-usa"><i class="fa fa-check"></i><b>2.1.1</b> Josh M London (Seattle, Washington, USA)</a></li>
+<li class="chapter" data-level="2.1.2" data-path="intro.html"><a href="intro.html#alex-zerbini-seattle-washington-usa-sao-paulo-brazil"><i class="fa fa-check"></i><b>2.1.2</b> Alex Zerbini (Seattle, Washington, USA / Sao Paulo, Brazil)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#spatial-analysis-and-data-types"><i class="fa fa-check"></i><b>2.2</b> Spatial Analysis and Data Types</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#making-maps-with-ggplot2-and-ggspatial"><i class="fa fa-check"></i><b>2.3</b> Making Maps with <code>ggplot2</code> and <code>ggspatial</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html"><i class="fa fa-check"></i><b>3</b> Exercise #1: Loading Spatial Data</a><ul>
-<li class="chapter" data-level="3.1" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#load-spatial-data-into-r"><i class="fa fa-check"></i><b>3.1</b> Load Spatial Data Into R</a></li>
+<li class="chapter" data-level="3.1" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#load-shapefiles-into-r"><i class="fa fa-check"></i><b>3.1</b> Load Shapefiles Into R</a></li>
+<li class="chapter" data-level="3.2" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#first-map-with-ggplot"><i class="fa fa-check"></i><b>3.2</b> First Map with ggplot</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#cartolight"><i class="fa fa-check"></i><b>3.2.1</b> cartolight</a></li>
+<li class="chapter" data-level="3.2.2" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#microsoft-bing-aerial-imagery"><i class="fa fa-check"></i><b>3.2.2</b> Microsoft Bing Aerial Imagery</a></li>
+<li class="chapter" data-level="3.2.3" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#survey-stratum"><i class="fa fa-check"></i><b>3.2.3</b> Survey Stratum</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#load-spatial-csv-data-into-r"><i class="fa fa-check"></i><b>3.3</b> Load Spatial CSV Data into R</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#franciscana-sightings"><i class="fa fa-check"></i><b>3.3.1</b> Franciscana Sightings</a></li>
+<li class="chapter" data-level="3.3.2" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#realized-survey-effort"><i class="fa fa-check"></i><b>3.3.2</b> Realized Survey Effort</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -96,11 +109,62 @@
             <section class="normal" id="section-">
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">Section 2</span> Introduction</h1>
+<p>The main purpose of this workshop is to introduce participants to spatial analysis and the
+creation of maps in R. We will do our best to cover some aspects of introductory R, but
+the main audience are those who already have experience with R and are hoping to expand
+their use to include spatial data. We will focus specifically on the the creation of maps
+for inclusion in publications and presentations.</p>
+<div id="about-the-instructors" class="section level2">
+<h2><span class="header-section-number">2.1</span> About the Instructors</h2>
+<div id="josh-m-london-seattle-washington-usa" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Josh M London (Seattle, Washington, USA)</h3>
+<p>Josh is a wildlife biologist with the U.S. NOAA Fisheries. The focus of Josh’s research is on
+phocid seals in Alaska. He has a wide range of interests but animal movement from bio-logging
+devices and abundance estimation from aerial surveys are key aspects of his research. Josh has
+been programming in R for 10+ years and has authored or co-authored a small number of R
+packages related to spatial analysis.</p>
+</div>
+<div id="alex-zerbini-seattle-washington-usa-sao-paulo-brazil" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Alex Zerbini (Seattle, Washington, USA / Sao Paulo, Brazil)</h3>
+</div>
+</div>
 <div id="spatial-analysis-and-data-types" class="section level2">
-<h2><span class="header-section-number">2.1</span> Spatial Analysis and Data Types</h2>
+<h2><span class="header-section-number">2.2</span> Spatial Analysis and Data Types</h2>
+<p>Until recently, most spatial analysis in R was centered around the <code>sp</code> package and it’s
+various spatial data types. There are a large number of packages and analyses that rely
+on the <code>sp</code> package. However, recently, a new package <code>sf</code> has been developed which offers a
+more modern approach to spatial data and relies on the <em>Simple Features</em> open data format
+for describing and storing spatial data.</p>
+<p>The key thing to recognize is that <code>sf</code> objects are, for the most part, data frames
+(or tibbles). Each row in the data frame represents a data record and each record has a
+column that describes the spatial geometry associated with that record. For example, 5
+points would be represented by a data frame with 5 records. Each record would have a
+geometry column and that column would describe the simple feature geometry. In this
+example the geometry would contain the x/y coordinates for each point.</p>
+<p>Because <code>sf</code> data objects are just data frames, it makes working with them and
+manipulating them much easier that <code>sp</code>. It also means that <code>sf</code> is compatible with many
+of the packages included in the tidyverse (e.g. <code>dplyr</code>, <code>purrr</code>, <code>ggplot2</code>).</p>
+<p>The <code>sf</code> package is only capable of working with and storing vector based spatial data
+(e.g. points, lines, polygons). It cannot be used for raster data. For those interested in
+using raster data, the <code>raster</code> package and the <code>stars</code> package are viable options. Note
+<code>stars</code> is relatively new and under heavy development at this time.</p>
 </div>
 <div id="making-maps-with-ggplot2-and-ggspatial" class="section level2">
-<h2><span class="header-section-number">2.2</span> Making Maps with <code>ggplot2</code> and <code>ggspatial</code></h2>
+<h2><span class="header-section-number">2.3</span> Making Maps with <code>ggplot2</code> and <code>ggspatial</code></h2>
+<p>Most of the exercises in this workshop will follow the follwoing workflow:</p>
+<ol style="list-style-type: decimal">
+<li>Import spatial data into R using the <code>sf</code> package</li>
+<li>Confirm the spatial data is valid and set the projection</li>
+<li>Use common tidyverse functions to edit, arrange, and group the data</li>
+<li>Create maps using <code>ggplot2</code> and <code>ggspatial</code></li>
+<li>Add scale bars, titles/subtitles, axis labels, and legends</li>
+<li>Save the maps to common image formats for inclusion in manuscripts and publications</li>
+</ol>
+<p>The <code>ggplot2</code> package is a widley used framework for developing plots and figures
+within R. The latest version of <code>ggplot2</code> has a special <code>geom_sf</code> function for <code>sf</code>
+spatial data. Latitude and longitude graticules are automatically created and other
+aspects of spatial data are handled within <code>ggplot2</code> that makes the process of
+creating quality maps much simpler.</p>
 
 </div>
 </div>

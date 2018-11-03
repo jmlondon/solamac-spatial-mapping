@@ -25,7 +25,7 @@
 <meta name="author" content="Josh M. London">
 
 
-<meta name="date" content="2018-10-31">
+<meta name="date" content="2018-11-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -52,7 +52,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -65,13 +65,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
   { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -133,15 +131,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#spatial-analysis-and-data-types"><i class="fa fa-check"></i><b>2.1</b> Spatial Analysis and Data Types</a></li>
-<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#making-maps-with-ggplot2-and-ggspatial"><i class="fa fa-check"></i><b>2.2</b> Making Maps with <code>ggplot2</code> and <code>ggspatial</code></a></li>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#about-the-instructors"><i class="fa fa-check"></i><b>2.1</b> About the Instructors</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#josh-m-london-seattle-washington-usa"><i class="fa fa-check"></i><b>2.1.1</b> Josh M London (Seattle, Washington, USA)</a></li>
+<li class="chapter" data-level="2.1.2" data-path="intro.html"><a href="intro.html#alex-zerbini-seattle-washington-usa-sao-paulo-brazil"><i class="fa fa-check"></i><b>2.1.2</b> Alex Zerbini (Seattle, Washington, USA / Sao Paulo, Brazil)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#spatial-analysis-and-data-types"><i class="fa fa-check"></i><b>2.2</b> Spatial Analysis and Data Types</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#making-maps-with-ggplot2-and-ggspatial"><i class="fa fa-check"></i><b>2.3</b> Making Maps with <code>ggplot2</code> and <code>ggspatial</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html"><i class="fa fa-check"></i><b>3</b> Exercise #1: Loading Spatial Data</a><ul>
 <li class="chapter" data-level="3.1" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#load-shapefiles-into-r"><i class="fa fa-check"></i><b>3.1</b> Load Shapefiles Into R</a></li>
 <li class="chapter" data-level="3.2" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#first-map-with-ggplot"><i class="fa fa-check"></i><b>3.2</b> First Map with ggplot</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#cartolight"><i class="fa fa-check"></i><b>3.2.1</b> cartolight</a></li>
 <li class="chapter" data-level="3.2.2" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#microsoft-bing-aerial-imagery"><i class="fa fa-check"></i><b>3.2.2</b> Microsoft Bing Aerial Imagery</a></li>
+<li class="chapter" data-level="3.2.3" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#projections"><i class="fa fa-check"></i><b>3.2.3</b> Projections</a></li>
+<li class="chapter" data-level="3.2.4" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#survey-stratum"><i class="fa fa-check"></i><b>3.2.4</b> Survey Stratum</a></li>
 </ul></li>
+<li class="chapter" data-level="3.3" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#load-spatial-csv-data-into-r"><i class="fa fa-check"></i><b>3.3</b> Load Spatial CSV Data into R</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#franciscana-sightings"><i class="fa fa-check"></i><b>3.3.1</b> Franciscana Sightings</a></li>
+<li class="chapter" data-level="3.3.2" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#realized-survey-effort"><i class="fa fa-check"></i><b>3.3.2</b> Realized Survey Effort</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="exercise-1-loading-spatial-data.html"><a href="exercise-1-loading-spatial-data.html#multiple-panels-in-a-plot"><i class="fa fa-check"></i><b>3.4</b> Multiple Panels in a Plot</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -167,7 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Section 3</span> Exercise #1: Loading Spatial Data</h1>
 <div id="load-shapefiles-into-r" class="section level2">
 <h2><span class="header-section-number">3.1</span> Load Shapefiles Into R</h2>
-<p>The <code>sf</code> package has wide-ranging support for importing vairous spatial
+<p>The <code>sf</code> package has wide-ranging support for importing various spatial
 data/file formats. You can even import data directly from a spatially
 enabled database (e.g. PostgreSQL/PostGIS). One of the more common spatial
 file formats you may encounter is the ESRI Shapefile format.</p>
@@ -176,26 +185,27 @@ file formats you may encounter is the ESRI Shapefile format.</p>
 a hiatus, or gap, where there were no historical sightings of <em>Franciscana</em>. This
 region was defined and is provided as a Shapefile.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
-<pre><code>## ── Attaching packages ────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
-<pre><code>## ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
+<pre><code>## ── Attaching packages ───────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 3.1.0     ✔ purrr   0.2.5
 ## ✔ tibble  1.4.2     ✔ dplyr   0.7.7
-## ✔ tidyr   0.8.1     ✔ stringr 1.3.1
+## ✔ tidyr   0.8.2     ✔ stringr 1.3.1
 ## ✔ readr   1.1.1     ✔ forcats 0.3.0</code></pre>
-<pre><code>## ── Conflicts ───────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ──────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">library</span>(sf)</a></code></pre></div>
-<pre><code>## Linking to GEOS 3.6.2, GDAL 2.3.0, PROJ 5.1.0</code></pre>
+<pre><code>## Linking to GEOS 3.6.1, GDAL 2.1.3, PROJ 4.9.3</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">library</span>(lwgeom)</a></code></pre></div>
-<pre><code>## Linking to liblwgeom 2.4.4 r16526, GEOS 3.6.2, proj.4 5.1.0</code></pre>
+<pre><code>## Linking to liblwgeom 2.5.0dev r16016, GEOS 3.6.1, proj.4 4.9.3</code></pre>
+<p>provide the path to your shapefile directory. Note the path is based
+on the *.shp file.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">hiatus_path &lt;-<span class="st"> </span><span class="kw">file.path</span>(<span class="st">&quot;..&quot;</span>,<span class="st">&quot;data&quot;</span>,<span class="st">&quot;Fraciscana_Example&quot;</span>,<span class="st">&quot;Hiatus.shp&quot;</span>)</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb9-3" data-line-number="3">hiatus &lt;-<span class="st"> </span>sf<span class="op">::</span><span class="kw">st_read</span>(hiatus_path)</a></code></pre></div>
-<pre><code>## Reading layer `Hiatus&#39; from data source `/Users/josh.london/_projects/r/solamac-spatial-mapping/data/Fraciscana_Example/Hiatus.shp&#39; using driver `ESRI Shapefile&#39;</code></pre>
-<pre><code>## Warning in CPL_read_ogr(dsn, layer, query, as.character(options), quiet, :
-## GDAL Message 1: organizePolygons() received an unexpected geometry. Either
-## a polygon with interior rings, or a polygon with less than 4 points, or a
-## non-Polygon geometry. Return arguments as a collection.</code></pre>
+<pre><code>## Reading layer `Hiatus&#39; from data source `/Users/josh/r/solamac-spatial-mapping/data/Fraciscana_Example/Hiatus.shp&#39; using driver `ESRI Shapefile&#39;</code></pre>
+<pre><code>## Warning in CPL_read_ogr(dsn, layer, query, as.character(options), quiet, : GDAL Message 1: organizePolygons() received an unexpected geometry.
+## Either a polygon with interior rings, or a polygon with less than 4 points,
+## or a non-Polygon geometry.  Return arguments as a collection.</code></pre>
 <pre><code>## Simple feature collection with 1 feature and 1 field
 ## geometry type:  POLYGON
 ## dimension:      XY
@@ -208,7 +218,9 @@ can fix most of these issues. There is one additional step required
 (<code>sf::st_collection_extrac()</code>) which simplifies the data object from a
 “GEOMETRYCOLLECTION” to a single “POLYGON”. Don’t get too hung up on these steps
 to ‘fix’ the Shapefile data. Unfortunately, it is just one of those things that
-you might have to wrestle with when importing data.</p>
+you might have to wrestle with when importing data. <code>st_make_valid()</code> and other
+functions within R are helpful. But, you may still need to spend some time
+Googling the error message or asking for help on Stack Overflow or Twitter.</p>
 <p>Note that we are using the <em>pipe</em> (<code>%&gt;%</code>) function in the code below. This is a
 key component of the <em>tidyverse</em> and may be new to users more familiar with
 standard R code.</p>
@@ -249,7 +261,7 @@ Street Map service.</p>
 <p><img src="solamac-spatial-mapping_files/figure-html/hiatus-osm-1.png" width="672" /></p>
 <p>This is an improvement, but it might be better if we added some transparency
 to the hiatus polygon so we can see the land features underneath. We can also
-change the color and weight of the line so it stands out more.</p>
+change the color and weight of the polygon outline so it stands out more.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb18-2" data-line-number="2"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> <span class="st">&quot;osm&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb18-3" data-line-number="3"><span class="st">  </span><span class="kw">layer_spatial</span>(hiatus, <span class="dt">col =</span> <span class="st">&quot;dark red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">2</span>)</a></code></pre></div>
@@ -260,7 +272,7 @@ land. But, it might be useful to zoom out a bit more so we can get a better
 sense of the areas location and nearby geograph. Note the arguments to
 <em>expand</em> within <code>scale_x_continuous</code> and <code>scale_y_continuous</code> are in units
 of degrees longitude and latitude.</p>
-<p>While we are at it, we can also add a scale bar in the bottomr right.</p>
+<p>While we are at it, we can also add a scale bar in the bottom right.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb20-2" data-line-number="2"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> <span class="st">&quot;osm&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb20-3" data-line-number="3"><span class="st">  </span><span class="kw">layer_spatial</span>(hiatus, <span class="dt">col =</span> <span class="st">&quot;dark red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
@@ -295,7 +307,7 @@ it is in the world.</p>
 <a class="sourceLine" id="cb24-7" data-line-number="7">                   <span class="dt">width_hint =</span> <span class="fl">0.5</span>, </a>
 <a class="sourceLine" id="cb24-8" data-line-number="8">                   <span class="dt">style =</span> <span class="st">&quot;ticks&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb24-9" data-line-number="9"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Franciscana Hiatus Region&quot;</span>,</a>
-<a class="sourceLine" id="cb24-10" data-line-number="10">          <span class="dt">subtitle =</span> <span class="st">&quot;Area of limited Franciscana sightings off NE Brazil&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb24-10" data-line-number="10">          <span class="dt">subtitle =</span> <span class="st">&quot;Area of of NE Brazil with no Franciscana sightings&quot;</span>)</a></code></pre></div>
 <p><img src="solamac-spatial-mapping_files/figure-html/hiatus-esri-ocean-2-1.png" width="672" /></p>
 <p>There are variety of other style options available for tile maps that you
 can explore. Here are some additional tiles that you might prefer</p>
@@ -310,7 +322,7 @@ can explore. Here are some additional tiles that you might prefer</p>
 <a class="sourceLine" id="cb25-7" data-line-number="7">                   <span class="dt">width_hint =</span> <span class="fl">0.5</span>, </a>
 <a class="sourceLine" id="cb25-8" data-line-number="8">                   <span class="dt">style =</span> <span class="st">&quot;ticks&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb25-9" data-line-number="9"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Franciscana Hiatus Region&quot;</span>,</a>
-<a class="sourceLine" id="cb25-10" data-line-number="10">          <span class="dt">subtitle =</span> <span class="st">&quot;Area of limited Franciscana sightings off NE Brazil&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb25-10" data-line-number="10">          <span class="dt">subtitle =</span> <span class="st">&quot;Area of of NE Brazil with no Franciscana sightings&quot;</span>)</a></code></pre></div>
 <p><img src="solamac-spatial-mapping_files/figure-html/hiatus-cartolight-1.png" width="672" /></p>
 </div>
 <div id="microsoft-bing-aerial-imagery" class="section level3">
@@ -324,10 +336,367 @@ can explore. Here are some additional tiles that you might prefer</p>
 <a class="sourceLine" id="cb26-7" data-line-number="7">                   <span class="dt">width_hint =</span> <span class="fl">0.5</span>, </a>
 <a class="sourceLine" id="cb26-8" data-line-number="8">                   <span class="dt">style =</span> <span class="st">&quot;ticks&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb26-9" data-line-number="9"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Franciscana Hiatus Region&quot;</span>,</a>
-<a class="sourceLine" id="cb26-10" data-line-number="10">          <span class="dt">subtitle =</span> <span class="st">&quot;Area of limited Franciscana sightings off NE Brazil&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb26-10" data-line-number="10">          <span class="dt">subtitle =</span> <span class="st">&quot;Area of of NE Brazil with no Franciscana sightings&quot;</span>)</a></code></pre></div>
 <p><img src="solamac-spatial-mapping_files/figure-html/hiatus-bing-aerial-1.png" width="672" /></p>
-
 </div>
+<div id="projections" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Projections</h3>
+<p>The data we imported from the shapefile is in lat-long coordinates. This is a convenient
+coordinate system and is the common system for storing geographic coordinates the world
+over. GPS, Satellite Telemetry, and many other systems store or record coordinates
+in lat-long. There are various formats for presenting lat-long coordinates
+(e.g. degrees minutes seconds, degrees decimal-minutes, decimal degrees). The most
+consistent and easiest format to work with is <em>decimal degrees</em>. If you can collect data
+in this format, then your analytical life will be much easier.</p>
+<p>There are a nearly infinite number of possible projections. That said, there are a number of
+standard projections that have been developed for various regions and scales. You should
+spend some time researching projections used in your region and adopt a single projection
+that can serve as the standard for your analysis. In many cases the UTM zones may be a good
+place to start. If you cannot find a projection that specifically meets your needs, you can
+create a custom projection by adjusting parameters of an existing projection so the central
+region is centered on your data.</p>
+<p>So, why bother? Why not just keep your data in lat-long? For some applications (and, in the
+spirit of keeping things simple), this may be a perfectly valid choice. However, lat-long
+degrees do not represent equal distance and computation of spatial features and various
+parameters are not as reliable.</p>
+<p>Thankfully, R and <code>sf</code> make it really easy to set and transform your data from one
+projection to another. In our initial example, here, the projection information is
+read directly from the shapefile.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">hiatus</a></code></pre></div>
+<pre><code>## Simple feature collection with 1 feature and 1 field
+## geometry type:  POLYGON
+## dimension:      XY
+## bbox:           xmin: -40.95967 ymin: -21.44691 xmax: -39.77479 ymax: -19.68095
+## epsg (SRID):    4326
+## proj4string:    +proj=longlat +datum=WGS84 +no_defs
+##   Name                       geometry
+## 1 &lt;NA&gt; POLYGON ((-40.815 -21.02993...</code></pre>
+<p>Note there is both a <code>epsg (SRID)</code> entry and a <code>proj4string</code>. For standard projections,
+the <code>epsg</code> code is the easiest and most reliable method for specifying a projection.
+In some cases, however, you might need to specify a <code>proj4string</code>. If you don’t know
+the <code>epsg</code> or <code>proj4string</code> for your projection of interest, searching at
+(SpatialReference.org)[<a href="https://spatialreference.org" class="uri">https://spatialreference.org</a>] is a good place to start.</p>
+<p>For South America, one possible projection to use is the South America Albers Equal
+Area Conic. The <code>epsg</code> integer code is 102033 and the PROJ.4 text description is:</p>
+<pre><code>+proj=aea +lat_1=-5 +lat_2=-42 +lat_0=-32 +lon_0=-60 +x_0=0 +y_0=0 +ellps=aust_SA +units=m no_defs</code></pre>
+<p>To transform our <code>hiatus</code> object into this projection we can simply execute the
+following</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">hiatus &lt;-<span class="st"> </span>hiatus <span class="op">%&gt;%</span><span class="st"> </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">102033</span>)</a></code></pre></div>
+</div>
+<div id="survey-stratum" class="section level3">
+<h3><span class="header-section-number">3.2.4</span> Survey Stratum</h3>
+<p>In addition to the hiatus region, the survey area was divided into a northern and
+southern stratum. The ShapeFiles for these polygons are provided in the same
+directory as the hiatus data. The file names are: <code>Northern_stratum.shp</code> and
+<code>Southern_stratum.shp</code>. Remember, you’ll want to transform all of your
+data into the South America Albers Equal Area Conic projection.</p>
+<p>Before proceeding ahead, try creating a map on your own that includes all three
+areas of interest (hiatus and both stratums).</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">north_stratum &lt;-<span class="st"> </span><span class="kw">file.path</span>(<span class="st">&quot;..&quot;</span>,<span class="st">&quot;data&quot;</span>,<span class="st">&quot;Fraciscana_Example&quot;</span>,</a>
+<a class="sourceLine" id="cb31-2" data-line-number="2">                           <span class="st">&quot;Northern_stratum.shp&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb31-3" data-line-number="3"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_read</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb31-4" data-line-number="4"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">102033</span>)</a></code></pre></div>
+<pre><code>## Reading layer `Northern_stratum&#39; from data source `/Users/josh/r/solamac-spatial-mapping/data/Fraciscana_Example/Northern_stratum.shp&#39; using driver `ESRI Shapefile&#39;
+## Simple feature collection with 1 feature and 1 field
+## geometry type:  POLYGON
+## dimension:      XY
+## bbox:           xmin: -39.91068 ymin: -19.76477 xmax: -39.31677 ymax: -18.31996
+## epsg (SRID):    4326
+## proj4string:    +proj=longlat +datum=WGS84 +no_defs</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="co"># non-tidyverse</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="co"># north_path &lt;- file.path(&quot;..&quot;,&quot;data&quot;,&quot;Fraciscana_Example&quot;,</span></a>
+<a class="sourceLine" id="cb33-3" data-line-number="3"><span class="co">#                         &quot;Northern_stratum.shp&quot;)</span></a>
+<a class="sourceLine" id="cb33-4" data-line-number="4"><span class="co"># north_stratum &lt;- sf::st_read(northern_path)</span></a>
+<a class="sourceLine" id="cb33-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb33-6" data-line-number="6">south_stratum &lt;-<span class="st"> </span><span class="kw">file.path</span>(<span class="st">&quot;..&quot;</span>,<span class="st">&quot;data&quot;</span>,<span class="st">&quot;Fraciscana_Example&quot;</span>,</a>
+<a class="sourceLine" id="cb33-7" data-line-number="7">                           <span class="st">&quot;Southern_stratum.shp&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-8" data-line-number="8"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_read</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-9" data-line-number="9"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">102033</span>)</a></code></pre></div>
+<pre><code>## Reading layer `Southern_stratum&#39; from data source `/Users/josh/r/solamac-spatial-mapping/data/Fraciscana_Example/Southern_stratum.shp&#39; using driver `ESRI Shapefile&#39;
+## Simple feature collection with 1 feature and 1 field
+## geometry type:  POLYGON
+## dimension:      XY
+## bbox:           xmin: -41.98923 ymin: -22.651 xmax: -40.51892 ymax: -21.28394
+## epsg (SRID):    4326
+## proj4string:    +proj=longlat +datum=WGS84 +no_defs</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="co"># non-tidyverse</span></a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="co"># north_path &lt;- file.path(&quot;..&quot;,&quot;data&quot;,&quot;Fraciscana_Example&quot;,</span></a>
+<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="co">#                         &quot;Northern_stratum.shp&quot;)</span></a>
+<a class="sourceLine" id="cb35-4" data-line-number="4"><span class="co"># north_stratum &lt;- sf::st_read(northern_path)</span></a>
+<a class="sourceLine" id="cb35-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb35-6" data-line-number="6">franciscana_plot &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb35-7" data-line-number="7"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb35-8" data-line-number="8"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> esri_ocean, <span class="dt">zoomin =</span> <span class="dv">1</span>, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb35-9" data-line-number="9"><span class="st">  </span><span class="kw">layer_spatial</span>(hiatus, <span class="dt">col =</span> <span class="st">&quot;dark red&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb35-10" data-line-number="10"><span class="st">  </span><span class="kw">layer_spatial</span>(north_stratum, <span class="dt">col =</span> <span class="st">&quot;purple4&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;purple&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb35-11" data-line-number="11"><span class="st">  </span><span class="kw">layer_spatial</span>(south_stratum, <span class="dt">col =</span> <span class="st">&quot;purple4&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;purple&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb35-12" data-line-number="12"><span class="st">  </span><span class="kw">geom_sf_label</span>(north_stratum, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> <span class="st">&quot;Northern Stratum&quot;</span>), <span class="dt">nudge_x =</span> <span class="dv">150000</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb35-13" data-line-number="13"><span class="st">  </span><span class="kw">geom_sf_label</span>(south_stratum, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> <span class="st">&quot;Southern Stratum&quot;</span>), <span class="dt">nudge_x =</span> <span class="dv">165000</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb35-14" data-line-number="14"><span class="st">  </span><span class="kw">geom_sf_label</span>(hiatus, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">label =</span> <span class="st">&quot;Hiatus&quot;</span>), <span class="dt">nudge_x =</span> <span class="dv">75000</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb35-15" data-line-number="15"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="fl">0.5</span>,<span class="fl">0.5</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb35-16" data-line-number="16"><span class="st">  </span><span class="kw">annotation_scale</span>(<span class="dt">location =</span> <span class="st">&quot;tl&quot;</span>, </a>
+<a class="sourceLine" id="cb35-17" data-line-number="17">                   <span class="dt">width_hint =</span> <span class="fl">0.3</span>, </a>
+<a class="sourceLine" id="cb35-18" data-line-number="18">                   <span class="dt">style =</span> <span class="st">&quot;ticks&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb35-19" data-line-number="19"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Franciscana Survey Study Area&quot;</span>,</a>
+<a class="sourceLine" id="cb35-20" data-line-number="20">          <span class="dt">subtitle =</span> <span class="st">&quot;survey effort was concentrated in the northern and southern stratums&quot;</span>)</a>
+<a class="sourceLine" id="cb35-21" data-line-number="21">franciscana_plot</a></code></pre></div>
+<p><img src="solamac-spatial-mapping_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+</div>
+<div id="load-spatial-csv-data-into-r" class="section level2">
+<h2><span class="header-section-number">3.3</span> Load Spatial CSV Data into R</h2>
+<div id="franciscana-sightings" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Franciscana Sightings</h3>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">sightings &lt;-<span class="st"> </span><span class="kw">file.path</span>(<span class="st">&quot;..&quot;</span>,<span class="st">&quot;data&quot;</span>,<span class="st">&quot;Fraciscana_Example&quot;</span>,</a>
+<a class="sourceLine" id="cb36-2" data-line-number="2">                           <span class="st">&quot;Franciscana_Example_Sighting_Data.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb36-3" data-line-number="3"><span class="st">  </span>readr<span class="op">::</span><span class="kw">read_csv</span>() </a></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   Date = col_character(),
+##   Matches = col_integer(),
+##   Event = col_character(),
+##   Time = col_character(),
+##   WayPoint = col_integer(),
+##   Effort = col_character(),
+##   Lat = col_double(),
+##   Long = col_double(),
+##   Line = col_character(),
+##   Observer = col_character(),
+##   Position = col_character()
+## )</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">sightings</a></code></pre></div>
+<pre><code>## # A tibble: 20 x 11
+##    Date  Matches Event Time  WayPoint Effort   Lat  Long Line  Observer
+##    &lt;chr&gt;   &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   
+##  1 12.1…       0 A     7:48…        1 ON     -22.2 -41.2 RJ24  Emanuel…
+##  2 12.1…       0 A     7:49…        2 ON     -22.3 -41.2 RJ24  Emanuel…
+##  3 12.1…       0 A     8:01…        3 ON     -22.2 -41.4 RJ25  Emanuel…
+##  4 12.1…       0 A     8:09…        4 ON     -22.3 -41.3 RJ26  Emanuel…
+##  5 12.1…       0 A     10:3…        5 ON     -22.1 -41.1 RJ19  Emanuel…
+##  6 13.1…       0 A     9:10…        6 ON     -21.6 -41.0 RJ08  Emanuel…
+##  7 12.1…       1 A     0.33…        7 ON     -22.2 -41.4 RJ25  Daniel …
+##  8 12.1…       1 A     0.33…        8 ON     -22.2 -41.4 RJ25  Daniel …
+##  9 12.1…       0 A     0.33…        9 ON     -22.3 -41.3 RJ26  Daniel …
+## 10 12.1…       1 A     0.43…       10 ON     -22.1 -41.0 RJ 19 Daniel …
+## 11 12.1…       1 A     0.43…       11 ON     -22.1 -41.0 RJ 19 Daniel …
+## 12 12.1…       0 A     0.32…       12 ON     -22.2 -41.3 RJ24  Federic…
+## 13 12.1…       0 A     0.34…       13 ON     -22.2 -41.5 RJ27  Federic…
+## 14 12.1…       0 A     0.34…       14 ON     -22.2 -41.5 RJ27  Federic…
+## 15 12.1…       0 A     0.43…       15 ON     -22.1 -41.1 RJ20  Federic…
+## 16 07.0…       0 A     8:49…       16 OFF    -19.7 -39.9 N     Emanuel…
+## 17 07.0…       0 A     8:49…       17 OFF    -19.7 -39.9 N     Emanuel…
+## 18 07.0…       0 A     8:49…       18 OFF    -19.7 -39.9 N     Emanuel…
+## 19 08.0…       0 A     6:49…       19 OFF    -19.5 -39.7 N     Emanuel…
+## 20 08.0…       0 A     9:33…       20 OFF    -19.9 -40.1 N     Emanuel…
+## # ... with 1 more variable: Position &lt;chr&gt;</code></pre>
+<p>As we look at this CSV file, we can see that each record represents a spatial point that
+corresponds with a Franciscana sighting. Note that our coordinates are recorded in
+the <code>Lat</code> and <code>Long</code> columns and the units are decimal degrees. With this information we
+can turn our <code>sightings</code> data into an sf object. Note that we will set our data initially
+to <code>epsg</code> 4326. Then, we transform to our common projection.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1">sightings &lt;-<span class="st"> </span>sightings <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_as_sf</span>(<span class="dt">coords =</span> <span class="kw">c</span>(<span class="st">&quot;Long&quot;</span>,<span class="st">&quot;Lat&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb40-3" data-line-number="3"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_set_crs</span>(<span class="dv">4326</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb40-4" data-line-number="4"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">102033</span>)</a></code></pre></div>
+<p>We will also be interested in distinguishing between “ON” and “OFF” effort
+sightings. So, we will modify this column into a factor.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1">sightings &lt;-<span class="st"> </span>sightings <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb41-2" data-line-number="2"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">Effort =</span> <span class="kw">factor</span>(Effort,<span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;ON&quot;</span>,<span class="st">&quot;OFF&quot;</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1">franciscana_plot <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="st">  </span><span class="kw">layer_spatial</span>(sightings) <span class="op">+</span></a>
+<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Franciscana Survey Sightings&quot;</span>, <span class="dt">subtitle =</span> <span class="ot">NULL</span>)</a></code></pre></div>
+<p><img src="solamac-spatial-mapping_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="realized-survey-effort" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Realized Survey Effort</h3>
+<p>In order to properly interpret the sightings data, we also need to know the survey effort
+that was realized during the study. These data are provided as a CSV.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1">realized_effort &lt;-<span class="st"> </span><span class="kw">file.path</span>(<span class="st">&quot;..&quot;</span>,<span class="st">&quot;data&quot;</span>,<span class="st">&quot;Fraciscana_Example&quot;</span>,</a>
+<a class="sourceLine" id="cb43-2" data-line-number="2">                           <span class="st">&quot;Franciscana_Example_Realized_Effort.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb43-3" data-line-number="3"><span class="st">  </span>readr<span class="op">::</span><span class="kw">read_csv</span>()</a></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   Index = col_integer(),
+##   LineLabel = col_character(),
+##   Date = col_character(),
+##   LatD_Beg = col_double(),
+##   LongD_Beg = col_double(),
+##   LatD_End = col_double(),
+##   LongD_End = col_double(),
+##   Length = col_double()
+## )</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1">realized_effort</a></code></pre></div>
+<pre><code>## # A tibble: 83 x 8
+##    Index LineLabel Date   LatD_Beg LongD_Beg LatD_End LongD_End Length
+##    &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+##  1     1 E 25      17.dez    -19.6     -39.7    -19.5     -39.8   12.4
+##  2     2 E 26      17.dez    -19.6     -39.8    -19.6     -39.7   11.6
+##  3     3 E 27      17.dez    -19.7     -39.7    -19.6     -39.8   10.9
+##  4     4 E24       5.jan     -19.5     -39.7    -19.6     -39.6   14.0
+##  5     5 ES 07b    8.jan     -18.8     -39.4    -18.6     -39.7   40.5
+##  6     6 ES 01     &lt;NA&gt;      -18.4     -39.5    -18.3     -39.7   16.8
+##  7     7 ES 02     &lt;NA&gt;      -18.4     -39.7    -18.5     -39.5   19.2
+##  8     8 ES 03     &lt;NA&gt;      -18.6     -39.3    -18.4     -39.7   45.2
+##  9     9 ES 04     &lt;NA&gt;      -18.5     -39.7    -18.7     -39.3   48.4
+## 10    10 ES 05     &lt;NA&gt;      -18.8     -39.3    -18.5     -39.7   50.9
+## # ... with 73 more rows</code></pre>
+<p>If we examine these data, we see the structure provides four columns (<code>LatD_Beg</code>,
+<code>LatD_End</code>, <code>LongD_Beg</code>, and <code>Long_End</code>) that represent our coordinates. These are
+the start and end points for each line. Since these data actually represent lines,
+we need to come up with a process for converting them to lines.</p>
+<blockquote>
+<p>These next few steps involve some intermediate to advance tidyverse skills. Don’t worry
+if you don’t grasp everything right away. We will take things slowly and step by
+step. The functions <code>gather</code> and <code>spread</code> within the <code>tidyr</code> package sometimes
+especially difficult for new users to fully appreciate.</p>
+</blockquote>
+<p>The first step is we need to <em>tidy</em> the data frame. One of the key principles of <em>tidy</em>
+is that every record is an observation and ever column is a data field. In this
+situation, we have coordinates spread across 4 different columns. We would prefer to
+see a single column for <code>latitude</code> and another for <code>longitude</code>. Then, we would have
+a third column that specifies the <code>label</code> (begin or end). From this, we could group the
+points by Index and convert our <code>sf</code> geometry to “LINESTRING”.</p>
+<p>The first step is to use the <code>tidyr::gather()</code> function to make our data frame less
+wide. We are going to <em>gather</em> the information in the four coordinate columns into
+two new columns <code>label</code>, and <code>coordinate</code>.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1">realized_effort &lt;-<span class="st"> </span>realized_effort <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb47-2" data-line-number="2"><span class="st">  </span><span class="kw">gather</span>(<span class="dt">key =</span> label, <span class="dt">value =</span> coordinate, LatD_Beg, LatD_End, LongD_Beg, LongD_End) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb47-3" data-line-number="3"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">separate</span>(label,<span class="kw">c</span>(<span class="st">&quot;longlat&quot;</span>,<span class="st">&quot;beginend&quot;</span>),<span class="st">&quot;_&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb47-4" data-line-number="4"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">longlat =</span> <span class="kw">ifelse</span>(longlat <span class="op">==</span><span class="st"> &quot;LatD&quot;</span>,<span class="st">&quot;latitude&quot;</span>,<span class="st">&quot;longitude&quot;</span>),</a>
+<a class="sourceLine" id="cb47-5" data-line-number="5">                <span class="dt">beginend =</span> <span class="kw">ifelse</span>(beginend <span class="op">==</span><span class="st"> &quot;Beg&quot;</span>,<span class="st">&quot;begin&quot;</span>,<span class="st">&quot;end&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb47-6" data-line-number="6"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">arrange</span>(Index, LineLabel, Date)</a>
+<a class="sourceLine" id="cb47-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb47-8" data-line-number="8">realized_effort</a></code></pre></div>
+<pre><code>## # A tibble: 332 x 7
+##    Index LineLabel Date   Length longlat   beginend coordinate
+##    &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;         &lt;dbl&gt;
+##  1     1 E 25      17.dez   12.4 latitude  begin         -19.6
+##  2     1 E 25      17.dez   12.4 latitude  end           -19.5
+##  3     1 E 25      17.dez   12.4 longitude begin         -39.7
+##  4     1 E 25      17.dez   12.4 longitude end           -39.8
+##  5     2 E 26      17.dez   11.6 latitude  begin         -19.6
+##  6     2 E 26      17.dez   11.6 latitude  end           -19.6
+##  7     2 E 26      17.dez   11.6 longitude begin         -39.8
+##  8     2 E 26      17.dez   11.6 longitude end           -39.7
+##  9     3 E 27      17.dez   10.9 latitude  begin         -19.7
+## 10     3 E 27      17.dez   10.9 latitude  end           -19.6
+## # ... with 322 more rows</code></pre>
+<p>Now, we can use the <code>tidyr::spread()</code> function to create a separate <code>longitude</code> and
+<code>latitude</code> column to represent our coordinate data. We will then convert this into an
+<code>sf</code> object. This will create a “POINT” data type, but we can use <code>dplyr::group_by()</code>
+to identify our lines and then <code>summarise()</code> plus <code>sf::st_cast()</code> to create our final
+<code>sf</code> data table of effort lines.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1">realized_effort &lt;-<span class="st"> </span>realized_effort <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">spread</span>(longlat,coordinate) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb49-3" data-line-number="3"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_as_sf</span>(<span class="dt">coords =</span> <span class="kw">c</span>(<span class="st">&quot;longitude&quot;</span>,<span class="st">&quot;latitude&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb49-4" data-line-number="4"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_set_crs</span>(<span class="dv">4326</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb49-5" data-line-number="5"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">102033</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb49-6" data-line-number="6"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">group_by</span>(Index, LineLabel,Date) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">do_union =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb49-7" data-line-number="7"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_cast</span>(<span class="st">&quot;LINESTRING&quot;</span>)</a>
+<a class="sourceLine" id="cb49-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb49-9" data-line-number="9">realized_effort</a></code></pre></div>
+<pre><code>## Simple feature collection with 83 features and 3 fields
+## geometry type:  LINESTRING
+## dimension:      XY
+## bbox:           xmin: 1756252 ymin: 987612.3 xmax: 2072998 ymax: 1453614
+## epsg (SRID):    102033
+## proj4string:    +proj=aea +lat_1=-5 +lat_2=-42 +lat_0=-32 +lon_0=-60 +x_0=0 +y_0=0 +ellps=aust_SA +units=m +no_defs
+## # A tibble: 83 x 4
+## # Groups:   Index, LineLabel [83]
+##    Index LineLabel Date                             geometry
+##    &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;                    &lt;LINESTRING [m]&gt;
+##  1     1 E 25      17.dez (2026994 1310557, 2018202 1318937)
+##  2     2 E 26      17.dez (2015704 1314816, 2023879 1306793)
+##  3     3 E 27      17.dez (2021027 1302856, 2013277 1310332)
+##  4     4 E24       5.jan  (2020236 1323208, 2030377 1313936)
+##  5     5 ES 07b    8.jan  (2063877 1396062, 2035041 1423532)
+##  6     6 ES 01     &lt;NA&gt;   (2057211 1441935, 2045444 1453614)
+##  7     7 ES 02     &lt;NA&gt;   (2043101 1449889, 2056611 1436693)
+##  8     8 ES 03     &lt;NA&gt;   (2072599 1414326, 2041625 1446426)
+##  9     9 ES 04     &lt;NA&gt;   (2038434 1439969, 2072996 1407222)
+## 10    10 ES 05     &lt;NA&gt;   (2072998 1400390, 2036802 1434932)
+## # ... with 73 more rows</code></pre>
+<p>Lastly, lets add these lines to our previous map so we can see everything combined.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1">franciscana_plot <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb51-2" data-line-number="2"><span class="st">  </span><span class="kw">layer_spatial</span>(realized_effort) <span class="op">+</span></a>
+<a class="sourceLine" id="cb51-3" data-line-number="3"><span class="st">  </span><span class="kw">layer_spatial</span>(sightings, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">fill =</span> Effort), <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">shape =</span> <span class="dv">21</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb51-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;white&quot;</span>), <span class="dt">drop =</span> <span class="ot">TRUE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb51-5" data-line-number="5"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Franciscana Survey Sightings&quot;</span>, </a>
+<a class="sourceLine" id="cb51-6" data-line-number="6">          <span class="dt">subtitle =</span> <span class="st">&quot;lines represent survey effort during the study&quot;</span>)</a></code></pre></div>
+<p><img src="solamac-spatial-mapping_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+</div>
+<div id="multiple-panels-in-a-plot" class="section level2">
+<h2><span class="header-section-number">3.4</span> Multiple Panels in a Plot</h2>
+<p>In our previous example, it can be difficult to assertain any detail from the sightings
+data at the larger scale. We might want to zoom in on each region and just show the
+sightings within a particular region. This can be easily accomplished with the <code>sf</code> package.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1">north_sightings &lt;-<span class="st"> </span>sightings[north_stratum,]</a>
+<a class="sourceLine" id="cb52-2" data-line-number="2">hiatus_sigthings &lt;-<span class="st"> </span>sightings[hiatus,]</a>
+<a class="sourceLine" id="cb52-3" data-line-number="3">south_sightings &lt;-<span class="st"> </span>sightings[south_stratum,]</a></code></pre></div>
+<p>Now, we can create a plot that focuses on each region</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1">franciscana_north_plot &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb53-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb53-3" data-line-number="3"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> esri_ocean, <span class="dt">zoomin =</span> <span class="dv">0</span>, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb53-4" data-line-number="4"><span class="st">  </span><span class="kw">layer_spatial</span>(north_stratum, <span class="dt">col =</span> <span class="st">&quot;dark red&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb53-5" data-line-number="5"><span class="st">  </span><span class="kw">layer_spatial</span>(realized_effort[north_stratum,]) <span class="op">+</span></a>
+<a class="sourceLine" id="cb53-6" data-line-number="6"><span class="st">  </span><span class="kw">layer_spatial</span>(sightings[north_stratum,], <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">fill =</span> Effort), <span class="dt">size =</span> <span class="dv">3</span>,</a>
+<a class="sourceLine" id="cb53-7" data-line-number="7">                <span class="dt">shape =</span> <span class="dv">21</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb53-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;white&quot;</span>), <span class="dt">drop =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb53-9" data-line-number="9"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="fl">0.25</span>,<span class="fl">0.25</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb53-10" data-line-number="10"><span class="st">  </span><span class="kw">annotation_scale</span>(<span class="dt">location =</span> <span class="st">&quot;tl&quot;</span>, </a>
+<a class="sourceLine" id="cb53-11" data-line-number="11">                   <span class="dt">width_hint =</span> <span class="fl">0.3</span>, </a>
+<a class="sourceLine" id="cb53-12" data-line-number="12">                   <span class="dt">style =</span> <span class="st">&quot;ticks&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb53-13" data-line-number="13"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">&quot;bottom&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb53-14" data-line-number="14"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Franciscana Sightings&quot;</span>,</a>
+<a class="sourceLine" id="cb53-15" data-line-number="15">          <span class="dt">subtitle =</span> <span class="st">&quot;northern stratum&quot;</span>)</a>
+<a class="sourceLine" id="cb53-16" data-line-number="16">franciscana_north_plot</a></code></pre></div>
+<p><img src="solamac-spatial-mapping_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">franciscana_hiatus_plot &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb54-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb54-3" data-line-number="3"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> esri_ocean, <span class="dt">zoomin =</span> <span class="dv">0</span>, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb54-4" data-line-number="4"><span class="st">  </span><span class="kw">layer_spatial</span>(hiatus, <span class="dt">col =</span> <span class="st">&quot;dark red&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb54-5" data-line-number="5"><span class="st">  </span><span class="kw">layer_spatial</span>(realized_effort[hiatus,]) <span class="op">+</span></a>
+<a class="sourceLine" id="cb54-6" data-line-number="6"><span class="st">  </span><span class="kw">layer_spatial</span>(sightings[hiatus,], </a>
+<a class="sourceLine" id="cb54-7" data-line-number="7">                <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">fill =</span> Effort),</a>
+<a class="sourceLine" id="cb54-8" data-line-number="8">                <span class="dt">size =</span> <span class="dv">3</span>, <span class="dt">shape =</span> <span class="dv">21</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb54-9" data-line-number="9"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;white&quot;</span>), <span class="dt">drop =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb54-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="fl">0.25</span>,<span class="fl">0.25</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb54-11" data-line-number="11"><span class="st">  </span><span class="kw">annotation_scale</span>(<span class="dt">location =</span> <span class="st">&quot;tl&quot;</span>, </a>
+<a class="sourceLine" id="cb54-12" data-line-number="12">                   <span class="dt">width_hint =</span> <span class="fl">0.3</span>, </a>
+<a class="sourceLine" id="cb54-13" data-line-number="13">                   <span class="dt">style =</span> <span class="st">&quot;ticks&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb54-14" data-line-number="14"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">&quot;bottom&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb54-15" data-line-number="15"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Franciscana Sightings&quot;</span>,</a>
+<a class="sourceLine" id="cb54-16" data-line-number="16">          <span class="dt">subtitle =</span> <span class="st">&quot;hiatus region&quot;</span>)</a>
+<a class="sourceLine" id="cb54-17" data-line-number="17">franciscana_hiatus_plot</a></code></pre></div>
+<p><img src="solamac-spatial-mapping_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1">franciscana_south_plot &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb55-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb55-3" data-line-number="3"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> esri_ocean, <span class="dt">zoomin =</span> <span class="dv">0</span>, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb55-4" data-line-number="4"><span class="st">  </span><span class="kw">layer_spatial</span>(south_stratum, <span class="dt">col =</span> <span class="st">&quot;dark red&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb55-5" data-line-number="5"><span class="st">  </span><span class="kw">layer_spatial</span>(realized_effort[south_stratum,]) <span class="op">+</span></a>
+<a class="sourceLine" id="cb55-6" data-line-number="6"><span class="st">  </span><span class="kw">layer_spatial</span>(sightings[south_stratum,], </a>
+<a class="sourceLine" id="cb55-7" data-line-number="7">                <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">fill =</span> Effort), <span class="dt">size =</span> <span class="dv">3</span>, <span class="dt">shape =</span> <span class="dv">21</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb55-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;white&quot;</span>), <span class="dt">drop =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb55-9" data-line-number="9"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="fl">0.25</span>,<span class="fl">0.25</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb55-10" data-line-number="10"><span class="st">  </span><span class="kw">annotation_scale</span>(<span class="dt">location =</span> <span class="st">&quot;tl&quot;</span>, </a>
+<a class="sourceLine" id="cb55-11" data-line-number="11">                   <span class="dt">width_hint =</span> <span class="fl">0.3</span>, </a>
+<a class="sourceLine" id="cb55-12" data-line-number="12">                   <span class="dt">style =</span> <span class="st">&quot;ticks&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb55-13" data-line-number="13"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">&quot;bottom&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb55-14" data-line-number="14"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Franciscana Sightings&quot;</span>,</a>
+<a class="sourceLine" id="cb55-15" data-line-number="15">          <span class="dt">subtitle =</span> <span class="st">&quot;southern stratum&quot;</span>)</a>
+<a class="sourceLine" id="cb55-16" data-line-number="16">franciscana_south_plot</a></code></pre></div>
+<p><img src="solamac-spatial-mapping_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="kw">library</span>(gridExtra)</a></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;gridExtra&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     combine</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="kw">grid.arrange</span>(franciscana_north_plot, franciscana_hiatus_plot,</a>
+<a class="sourceLine" id="cb59-2" data-line-number="2">             franciscana_south_plot,<span class="dt">nrow =</span> <span class="dv">1</span>)</a></code></pre></div>
+<p><img src="solamac-spatial-mapping_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+
 </div>
 </div>
             </section>

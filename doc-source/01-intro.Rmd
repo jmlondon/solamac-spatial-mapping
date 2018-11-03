@@ -1,5 +1,60 @@
 # Introduction {#intro}
 
+The main purpose of this workshop is to introduce participants to spatial analysis and the
+creation of maps in R. We will do our best to cover some aspects of introductory R, but
+the main audience are those who already have experience with R and are hoping to expand
+their use to include spatial data. We will focus specifically on the the creation of maps
+for inclusion in publications and presentations.
+
+## About the Instructors
+
+### Josh M London (Seattle, Washington, USA)
+
+Josh is a wildlife biologist with the U.S. NOAA Fisheries. The focus of Josh's research is on
+phocid seals in Alaska. He has a wide range of interests but animal movement from bio-logging
+devices and abundance estimation from aerial surveys are key aspects of his research. Josh has
+been programming in R for 10+ years and has authored or co-authored a small number of R
+packages related to spatial analysis.
+
+### Alex Zerbini (Seattle, Washington, USA / Sao Paulo, Brazil)
+
 ## Spatial Analysis and Data Types
 
+Until recently, most spatial analysis in R was centered around the `sp` package and it's
+various spatial data types. There are a large number of packages and analyses that rely
+on the `sp` package. However, recently, a new package `sf` has been developed which offers a
+more modern approach to spatial data and relies on the _Simple Features_ open data format
+for describing and storing spatial data.
+
+The key thing to recognize is that `sf` objects are, for the most part, data frames
+(or tibbles). Each row in the data frame represents a data record and each record has a
+column that describes the spatial geometry associated with that record. For example, 5 
+points would be represented by a data frame with 5 records. Each record would have a
+geometry column and that column would describe the simple feature geometry. In this 
+example the geometry would contain the x/y coordinates for each point.
+
+Because `sf` data objects are just data frames, it makes working with them and
+manipulating them much easier that `sp`. It also means that `sf` is compatible with many
+of the packages included in the tidyverse (e.g. `dplyr`, `purrr`, `ggplot2`).
+
+The `sf` package is only capable of working with and storing vector based spatial data
+(e.g. points, lines, polygons). It cannot be used for raster data. For those interested in
+using raster data, the `raster` package and the `stars` package are viable options. Note
+`stars` is relatively new and under heavy development at this time.
+
 ## Making Maps with `ggplot2` and `ggspatial`
+
+Most of the exercises in this workshop will follow the follwoing workflow:
+
+1. Import spatial data into R using the `sf` package
+2. Confirm the spatial data is valid and set the projection
+3. Use common tidyverse functions to edit, arrange, and group the data
+4. Create maps using `ggplot2` and `ggspatial`
+5. Add scale bars, titles/subtitles, axis labels, and legends
+6. Save the maps to common image formats for inclusion in manuscripts and publications
+
+The `ggplot2` package is a widley used framework for developing plots and figures
+within R. The latest version of `ggplot2` has a special `geom_sf` function for `sf` 
+spatial data. Latitude and longitude graticules are automatically created and other
+aspects of spatial data are handled within `ggplot2` that makes the process of
+creating quality maps much simpler.
