@@ -25,7 +25,7 @@
 <meta name="author" content="Josh M. London">
 
 
-<meta name="date" content="2018-11-03">
+<meta name="date" content="2018-11-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -289,7 +289,7 @@ detailed bathymetry and topography for the entire globe.</p>
 <a class="sourceLine" id="cb22-2" data-line-number="2">                     <span class="st">&#39;Ocean/World_Ocean_Base/MapServer/tile/${z}/${y}/${x}.jpeg&#39;</span>)</a></code></pre></div>
 <p>And, then we can replace the <code>annotation_map_tile()</code> in the previous code</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> esri_ocean, <span class="dt">zoomin =</span> <span class="dv">1</span>, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> esri_ocean, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb23-3" data-line-number="3"><span class="st">  </span><span class="kw">layer_spatial</span>(hiatus, <span class="dt">col =</span> <span class="st">&quot;dark red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb23-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="fl">1.5</span>,<span class="fl">1.5</span>)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb23-5" data-line-number="5"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="op">+</span></a>
@@ -299,7 +299,7 @@ detailed bathymetry and topography for the entire globe.</p>
 subtitle to the map so we can inform the user about what this is and where
 it is in the world.</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> esri_ocean, <span class="dt">zoomin =</span> <span class="dv">1</span>, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> esri_ocean, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb24-3" data-line-number="3"><span class="st">  </span><span class="kw">layer_spatial</span>(hiatus, <span class="dt">col =</span> <span class="st">&quot;dark red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb24-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="fl">1.5</span>,<span class="fl">1.5</span>)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb24-5" data-line-number="5"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="op">+</span></a>
@@ -314,7 +314,7 @@ can explore. Here are some additional tiles that you might prefer</p>
 <div id="cartolight" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> cartolight</h3>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> <span class="st">&quot;cartolight&quot;</span>, <span class="dt">zoomin =</span> <span class="dv">1</span>, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> <span class="st">&quot;cartolight&quot;</span>, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb25-3" data-line-number="3"><span class="st">  </span><span class="kw">layer_spatial</span>(hiatus, <span class="dt">col =</span> <span class="st">&quot;dark red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb25-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="fl">1.5</span>,<span class="fl">1.5</span>)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb25-5" data-line-number="5"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="op">+</span></a>
@@ -426,7 +426,7 @@ areas of interest (hiatus and both stratums).</p>
 <a class="sourceLine" id="cb35-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb35-6" data-line-number="6">franciscana_plot &lt;-<span class="st"> </span></a>
 <a class="sourceLine" id="cb35-7" data-line-number="7"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb35-8" data-line-number="8"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> esri_ocean, <span class="dt">zoomin =</span> <span class="dv">1</span>, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb35-8" data-line-number="8"><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">type =</span> esri_ocean, <span class="dt">progress =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb35-9" data-line-number="9"><span class="st">  </span><span class="kw">layer_spatial</span>(hiatus, <span class="dt">col =</span> <span class="st">&quot;dark red&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb35-10" data-line-number="10"><span class="st">  </span><span class="kw">layer_spatial</span>(north_stratum, <span class="dt">col =</span> <span class="st">&quot;purple4&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;purple&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb35-11" data-line-number="11"><span class="st">  </span><span class="kw">layer_spatial</span>(south_stratum, <span class="dt">col =</span> <span class="st">&quot;purple4&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;purple&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.4</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>

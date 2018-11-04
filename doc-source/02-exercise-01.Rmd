@@ -130,7 +130,7 @@ And, then we can replace the `annotation_map_tile()` in the previous code
 
 ```{r hiatus-esri-ocean}
 ggplot() +
-  annotation_map_tile(type = esri_ocean, zoomin = 1, progress = "none") +
+  annotation_map_tile(type = esri_ocean, progress = "none") +
   layer_spatial(hiatus, col = "dark red", alpha = 0.4, size = 1) +
   scale_y_continuous(expand = c(1.5,1.5)) +
   scale_x_continuous(expand = c(2,2)) +
@@ -143,7 +143,7 @@ it is in the world.
 
 ```{r hiatus-esri-ocean-2}
 ggplot() +
-  annotation_map_tile(type = esri_ocean, zoomin = 1, progress = "none") +
+  annotation_map_tile(type = esri_ocean, progress = "none") +
   layer_spatial(hiatus, col = "dark red", alpha = 0.4, size = 1) +
   scale_y_continuous(expand = c(1.5,1.5)) +
   scale_x_continuous(expand = c(2,2)) +
@@ -161,7 +161,7 @@ can explore. Here are some additional tiles that you might prefer
 
 ```{r hiatus-cartolight}
 ggplot() +
-  annotation_map_tile(type = "cartolight", zoomin = 1, progress = "none") +
+  annotation_map_tile(type = "cartolight", progress = "none") +
   layer_spatial(hiatus, col = "dark red", alpha = 0.4, size = 1) +
   scale_y_continuous(expand = c(1.5,1.5)) +
   scale_x_continuous(expand = c(2,2)) +
@@ -273,7 +273,7 @@ south_stratum <- file.path("..","data","Fraciscana_Example",
 
 franciscana_plot <- 
   ggplot() +
-  annotation_map_tile(type = esri_ocean, zoomin = 1, progress = "none") +
+  annotation_map_tile(type = esri_ocean, progress = "none") +
   layer_spatial(hiatus, col = "dark red", fill = "red", alpha = 0.4, size = 1) +
   layer_spatial(north_stratum, col = "purple4", fill = "purple", alpha = 0.4, size = 1) +
   layer_spatial(south_stratum, col = "purple4", fill = "purple", alpha = 0.4, size = 1) +
