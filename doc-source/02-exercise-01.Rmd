@@ -176,7 +176,7 @@ ggplot() +
 
 ```{r hiatus-bing-aerial}
 ggplot() +
-  annotation_map_tile(type = "http://ecn.t3.tiles.virtualearth.net/tiles/a${q}.jpeg?g=1", zoomin = 1, progress = "none") +
+  annotation_map_tile(type = "http://ecn.t3.tiles.virtualearth.net/tiles/a${q}.jpeg?g=1",progress = "none") +
   layer_spatial(hiatus, col = "dark red", alpha = 0.4, size = 1) +
   scale_y_continuous(expand = c(1.5,1.5)) +
   scale_x_continuous(expand = c(2,2)) +
