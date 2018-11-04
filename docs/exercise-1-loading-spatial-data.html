@@ -376,12 +376,11 @@ the <code>epsg</code> code is the easiest and most reliable method for specifyin
 In some cases, however, you might need to specify a <code>proj4string</code>. If you don’t know
 the <code>epsg</code> or <code>proj4string</code> for your projection of interest, searching at
 (SpatialReference.org)[<a href="https://spatialreference.org" class="uri">https://spatialreference.org</a>] is a good place to start.</p>
-<p>For South America, one possible projection to use is the South America Albers Equal
-Area Conic. The <code>epsg</code> integer code is 102033 and the PROJ.4 text description is:</p>
-<pre><code>+proj=aea +lat_1=-5 +lat_2=-42 +lat_0=-32 +lon_0=-60 +x_0=0 +y_0=0 +ellps=aust_SA +units=m no_defs</code></pre>
+<p>For South America, one possible projection to use is the UTM Zone 24 S. The <code>epsg</code> integer code is 32724 and the PROJ.4 text description is:</p>
+<pre><code>+proj=utm +zone=24 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs</code></pre>
 <p>To transform our <code>hiatus</code> object into this projection we can simply execute the
 following</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">hiatus &lt;-<span class="st"> </span>hiatus <span class="op">%&gt;%</span><span class="st"> </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">102033</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">hiatus &lt;-<span class="st"> </span>hiatus <span class="op">%&gt;%</span><span class="st"> </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">32724</span>)</a></code></pre></div>
 </div>
 <div id="survey-stratum" class="section level3">
 <h3><span class="header-section-number">3.2.4</span> Survey Stratum</h3>
@@ -395,7 +394,7 @@ areas of interest (hiatus and both stratums).</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">north_stratum &lt;-<span class="st"> </span><span class="kw">file.path</span>(<span class="st">&quot;..&quot;</span>,<span class="st">&quot;data&quot;</span>,<span class="st">&quot;Fraciscana_Example&quot;</span>,</a>
 <a class="sourceLine" id="cb31-2" data-line-number="2">                           <span class="st">&quot;Northern_stratum.shp&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb31-3" data-line-number="3"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_read</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb31-4" data-line-number="4"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">102033</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb31-4" data-line-number="4"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">32724</span>)</a></code></pre></div>
 <pre><code>## Reading layer `Northern_stratum&#39; from data source `/Users/josh/r/solamac-spatial-mapping/data/Fraciscana_Example/Northern_stratum.shp&#39; using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 1 feature and 1 field
 ## geometry type:  POLYGON
@@ -411,7 +410,7 @@ areas of interest (hiatus and both stratums).</p>
 <a class="sourceLine" id="cb33-6" data-line-number="6">south_stratum &lt;-<span class="st"> </span><span class="kw">file.path</span>(<span class="st">&quot;..&quot;</span>,<span class="st">&quot;data&quot;</span>,<span class="st">&quot;Fraciscana_Example&quot;</span>,</a>
 <a class="sourceLine" id="cb33-7" data-line-number="7">                           <span class="st">&quot;Southern_stratum.shp&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb33-8" data-line-number="8"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_read</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb33-9" data-line-number="9"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">102033</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb33-9" data-line-number="9"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">32724</span>)</a></code></pre></div>
 <pre><code>## Reading layer `Southern_stratum&#39; from data source `/Users/josh/r/solamac-spatial-mapping/data/Fraciscana_Example/Southern_stratum.shp&#39; using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 1 feature and 1 field
 ## geometry type:  POLYGON
@@ -497,7 +496,7 @@ to <code>epsg</code> 4326. Then, we transform to our common projection.</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1">sightings &lt;-<span class="st"> </span>sightings <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb40-2" data-line-number="2"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_as_sf</span>(<span class="dt">coords =</span> <span class="kw">c</span>(<span class="st">&quot;Long&quot;</span>,<span class="st">&quot;Lat&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb40-3" data-line-number="3"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_set_crs</span>(<span class="dv">4326</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb40-4" data-line-number="4"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">102033</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb40-4" data-line-number="4"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">32724</span>)</a></code></pre></div>
 <p>We will also be interested in distinguishing between “ON” and “OFF” effort
 sightings. So, we will modify this column into a factor.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1">sightings &lt;-<span class="st"> </span>sightings <span class="op">%&gt;%</span><span class="st"> </span></a>
@@ -590,7 +589,7 @@ to identify our lines and then <code>summarise()</code> plus <code>sf::st_cast()
 <a class="sourceLine" id="cb49-2" data-line-number="2"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">spread</span>(longlat,coordinate) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb49-3" data-line-number="3"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_as_sf</span>(<span class="dt">coords =</span> <span class="kw">c</span>(<span class="st">&quot;longitude&quot;</span>,<span class="st">&quot;latitude&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb49-4" data-line-number="4"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_set_crs</span>(<span class="dv">4326</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb49-5" data-line-number="5"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">102033</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb49-5" data-line-number="5"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_transform</span>(<span class="dv">32724</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb49-6" data-line-number="6"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">group_by</span>(Index, LineLabel,Date) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">do_union =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb49-7" data-line-number="7"><span class="st">  </span>sf<span class="op">::</span><span class="kw">st_cast</span>(<span class="st">&quot;LINESTRING&quot;</span>)</a>
 <a class="sourceLine" id="cb49-8" data-line-number="8"></a>
@@ -598,23 +597,23 @@ to identify our lines and then <code>summarise()</code> plus <code>sf::st_cast()
 <pre><code>## Simple feature collection with 83 features and 3 fields
 ## geometry type:  LINESTRING
 ## dimension:      XY
-## bbox:           xmin: 1756252 ymin: 987612.3 xmax: 2072998 ymax: 1453614
-## epsg (SRID):    102033
-## proj4string:    +proj=aea +lat_1=-5 +lat_2=-42 +lat_0=-32 +lon_0=-60 +x_0=0 +y_0=0 +ellps=aust_SA +units=m +no_defs
+## bbox:           xmin: 194467.8 ymin: 7495559 xmax: 466402.5 ymax: 7971837
+## epsg (SRID):    32724
+## proj4string:    +proj=utm +zone=24 +south +datum=WGS84 +units=m +no_defs
 ## # A tibble: 83 x 4
 ## # Groups:   Index, LineLabel [83]
-##    Index LineLabel Date                             geometry
-##    &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;                    &lt;LINESTRING [m]&gt;
-##  1     1 E 25      17.dez (2026994 1310557, 2018202 1318937)
-##  2     2 E 26      17.dez (2015704 1314816, 2023879 1306793)
-##  3     3 E 27      17.dez (2021027 1302856, 2013277 1310332)
-##  4     4 E24       5.jan  (2020236 1323208, 2030377 1313936)
-##  5     5 ES 07b    8.jan  (2063877 1396062, 2035041 1423532)
-##  6     6 ES 01     &lt;NA&gt;   (2057211 1441935, 2045444 1453614)
-##  7     7 ES 02     &lt;NA&gt;   (2043101 1449889, 2056611 1436693)
-##  8     8 ES 03     &lt;NA&gt;   (2072599 1414326, 2041625 1446426)
-##  9     9 ES 04     &lt;NA&gt;   (2038434 1439969, 2072996 1407222)
-## 10    10 ES 05     &lt;NA&gt;   (2072998 1400390, 2036802 1434932)
+##    Index LineLabel Date                               geometry
+##    &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;                      &lt;LINESTRING [m]&gt;
+##  1     1 E 25      17.dez (431310.5 7834369, 420962.7 7841116)
+##  2     2 E 26      17.dez (418959.2 7836900, 428614.9 7830410)
+##  3     3 E 27      17.dez   (426217 7826322, 417082.1 7832353)
+##  4     4 E24       5.jan  (422462.2 7845411, 434340.2 7838000)
+##  5     5 ES 07b    8.jan  (457294.5 7919901, 423403.6 7942048)
+##  6     6 ES 01     &lt;NA&gt;   (443764.8 7962350, 429876.5 7971837)
+##  7     7 ES 02     &lt;NA&gt;   (427980.4 7968009, 443896.9 7957319)
+##  8     8 ES 03     &lt;NA&gt;   (463712.9 7938296, 426946.8 7964543)
+##  9     9 ES 04     &lt;NA&gt;   (424562.8 7958022, 465150.1 7931640)
+## 10    10 ES 05     &lt;NA&gt;   (466139.5 7925188, 423593.1 7953048)
 ## # ... with 73 more rows</code></pre>
 <p>Lastly, lets add these lines to our previous map so we can see everything combined.</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1">franciscana_plot <span class="op">+</span><span class="st"> </span></a>
